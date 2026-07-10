@@ -6,7 +6,6 @@ import { WhatsAppCard } from "@/components/whatsapp-card"
 import { BibliotecaCard } from "@/components/biblioteca-card"
 import { FaithCard } from "@/components/faith-card"
 import { Footer } from "@/components/footer"
-import { WhatsAppGiftButton } from "@/components/whatsapp-gift-button"
 import { CustomRecipeRequest } from "@/components/custom-recipe-request"
 
 export default function HomePage() {
@@ -15,8 +14,6 @@ export default function HomePage() {
       <Header />
 
       <main className="px-4 py-6 pb-24 max-w-2xl mx-auto space-y-6">
-        <WhatsAppGiftButton />
-
         <IntroCard />
         <UsageOptionsCard />
         <TemperosCard />
