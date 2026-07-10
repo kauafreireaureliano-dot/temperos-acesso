@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { ShoppingBag } from "lucide-react"
+import Image from "next/image"
 
 type StorePopupProps = {
   open: boolean
@@ -18,14 +19,14 @@ type StorePopupProps = {
 const produtos = [
   {
     nome: "Churrasqueira",
-    emoji: "🔥",
+    imagem: "https://http2.mlstatic.com/D_Q_NP_873564-MLA99503984024_112025-F.webp",
     descricao: "Para preparar aquele churrasco perfeito com os temperos certos",
     url: "https://meli.la/1iPZaQq",
   },
   {
-    nome: "Kit Facas",
-    emoji: "🔪",
-    descricao: "Facas de qualidade para o preparo do dia a dia na cozinha",
+    nome: "Kit Churrasco",
+    imagem: "https://http2.mlstatic.com/D_NQ_NP_926310-MLB109770365017_032026-O.webp",
+    descricao: "Kit completo para o preparo do dia a dia no churrasco",
     url: "https://meli.la/2y2HThr",
   },
 ]
@@ -53,7 +54,9 @@ export function StorePopup({ open, onContinue }: StorePopupProps) {
               rel="noopener noreferrer"
               className="flex items-center gap-3 bg-card border border-border rounded-xl p-4 hover:border-primary/50 hover:shadow-md transition-all duration-200"
             >
-              <span className="text-3xl">{produto.emoji}</span>
+              <div className="relative w-16 h-16 shrink-0 rounded-lg overflow-hidden bg-white">
+                <Image src={produto.imagem} alt={produto.nome} fill className="object-contain" />
+              </div>
               <div className="flex-1 text-left">
                 <p className="font-semibold text-foreground">{produto.nome}</p>
                 <p className="text-sm text-muted-foreground text-pretty">{produto.descricao}</p>
